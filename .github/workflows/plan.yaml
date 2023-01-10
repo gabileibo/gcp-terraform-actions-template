@@ -1,0 +1,31 @@
+name: 'Terraform + GCP Boilerplate'
+
+on:
+  pull_request:
+    branches:
+    - "main"
+    paths: 
+    - hello-from-gcp/**
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  terraform-plan:
+    runs-on: ubuntu-latest
+    name: "Hello From GCP | Plan"
+    environment: terraform-plan
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Terraform Init
+        uses: "./.github/template/init"
+        with:
+          working_directory: './hello-from-gcp'
+          gcp_workload_identity_provider: ${{secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          gcp_service_account_email: ${{secrets.GCP_SERVICE_ACCOUNT_EMAIL}}
+      - name: Terraform Plan
+        uses: "./.github/template/plan"
+        with:
+          working_directory: './hello-from-gcp'

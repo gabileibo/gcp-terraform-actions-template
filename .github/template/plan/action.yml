@@ -1,0 +1,26 @@
+name: 'Terraform Plan'
+description: 'Run Terraform plan'
+inputs:
+  working_directory:  
+    description: 'The directory where the Terraform configuration is located.'
+    required: true
+    default: .
+runs:
+  using: "composite"
+  steps:    
+    # Check tf config
+    - name: Terraform Validate
+      run: terraform validate -no-color
+      working-directory: ${{ inputs.working_directory }}
+      shell: bash
+    # Generates an execution plan for Terraform
+    - name: Terraform Plan
+      run: |
+        terraform plan -input=false -no-color -out tf.plan
+      working-directory: ${{ inputs.working_directory }}
+      shell: bash
+
+    - name: Terraform Show
+      run: terraform show -no-color tf.plan 2>&1 > /tmp/plan.txt
+      working-directory: ${{ inputs.working_directory }}
+      shell: bash
