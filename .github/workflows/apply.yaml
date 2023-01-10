@@ -1,4 +1,4 @@
-name: 'Terraform + GCP Boilerplate'
+name: 'Terraform Apply'
 
 on:
   push:
