@@ -6,6 +6,7 @@ on:
     - main
     paths: 
     - hello-from-gcp/**
+    - .github/**
 
 permissions:
   contents: read
