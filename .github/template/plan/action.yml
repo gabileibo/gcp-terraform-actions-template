@@ -9,18 +9,13 @@ runs:
   using: "composite"
   steps:    
     # Check tf config
-    - name: Terraform Validate
-      run: terraform validate -no-color
-      working-directory: ${{ inputs.working_directory }}
-      shell: bash
+    - name: Checks
+      uses: pre-commit/action@v3.0.0
+      with:
+        extra_args: --all-files
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       run: |
-        terraform plan -input=false -no-color -out tf.plan
-      working-directory: ${{ inputs.working_directory }}
-      shell: bash
-
-    - name: Terraform Show
-      run: terraform show -no-color tf.plan 2>&1 > /tmp/plan.txt
+        terraform plan -input=false -no-color
       working-directory: ${{ inputs.working_directory }}
       shell: bash
