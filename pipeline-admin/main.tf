@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "{%GCS_STATE_BUCKET_NAME%}"
+    bucket = "hello-from-gcp-v2-tf-state"
     prefix = "pipeline-admin"
   }
 }
