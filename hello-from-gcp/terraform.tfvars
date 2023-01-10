@@ -1,3 +1,3 @@
 project_id      = "{%GCP_PROJECT_ID%}"
-region          = "{%GCP_DEFAULY_REGION}"
+region          = "{%GCP_DEFAULT_REGION}"
 tf_state_bucket = "{%GCS_STATE_BUCKET_NAME%}"
