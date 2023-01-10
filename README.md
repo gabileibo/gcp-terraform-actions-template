@@ -8,7 +8,7 @@ A simple repo to help bootstrap a Terraform project to provision infrastructure 
 
 Read more about how this works [here](https://cloud.google.com/blog/products/identity-security/enabling-keyless-authentication-from-github-actions)
 
-In practice I usually run the `pipeline-admin` folder locally to provision the minimum amount of access needed for this particular repository's purpose so that the rest of the team can use it for just what it is intended for.
+In practice I usually run the `pipeline-admin` folder locally or have it in an admin repo to provision the minimum amount of access needed for this particular repository's purpose so that the rest of the team can use it for just what it is intended for.
 
 ## Prerequisites
 
@@ -54,7 +54,7 @@ cd ..
 git remote set-url origin https://github.com/<my-new-repo>
 git add .
 git commit -m "init pipeline"
-git push -u origin master
+git push origin main
 ```
 
 5. If everything was set up correctly, the pipeline should succeed and you should see a the `bootstrap.txt` message in your terraform apply outputs
