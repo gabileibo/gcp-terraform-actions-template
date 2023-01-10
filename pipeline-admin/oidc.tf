@@ -45,7 +45,7 @@ resource "google_service_account" "terraform_readonly" {
 
 resource "google_project_iam_member" "terraform_readonly" {
   project = var.project_id
-  role    = "roles/owner"
+  role    = "roles/viewer"
   member  = "serviceAccount:${google_service_account.terraform_readwrite.email}"
 }
 
