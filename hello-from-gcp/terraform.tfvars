@@ -1,3 +1,3 @@
-project_id      = "hello-from-gcp-v2"
-region          = "us-central1"
-tf_state_bucket = "hello-from-gcp-v2-tf-state"
+project_id      = "{%GCP_PROJECT_ID%}"
+region          = "{%GCP_DEFAULT_REGION}"
+tf_state_bucket = "{%GCS_STATE_BUCKET_NAME%}"
