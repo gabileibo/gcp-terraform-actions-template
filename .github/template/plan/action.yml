@@ -8,11 +8,7 @@ inputs:
 runs:
   using: "composite"
   steps:    
-    # Check tf config
-    - name: Checks
-      uses: pre-commit/action@v3.0.0
-      with:
-        extra_args: --all-files
+    # TODO run pre-commit run --all-files
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       run: |

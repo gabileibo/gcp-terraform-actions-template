@@ -18,7 +18,7 @@ In practice I usually run the `pipeline-admin` folder locally to provision the m
 
 3. Terraform, [gh cli](https://cli.github.com/), and [gcloud cli](https://cloud.google.com/sdk/gcloud#download_and_install_the) installed on your machine
 
-4. Install [tfsec](https://aquasecurity.github.io/tfsec), [terraform_docs](https://terraform-docs.io/), and [pre-commit](https://pre-commit.com/) for some out-of-the-box best practice good-ness
+4. Install [tflint](https://github.com/terraform-linters/tflint),[tfsec](https://aquasecurity.github.io/tfsec), [terraform_docs](https://terraform-docs.io/), and [pre-commit](https://pre-commit.com/) for some out-of-the-box best practice good-ness
 
 ## What will this Boilerplate do?
 
