@@ -20,7 +20,7 @@ In practice I usually run the `pipeline-admin` folder locally to provision the m
 
 4. Install [tfsec](https://aquasecurity.github.io/tfsec), [terraform_docs](https://terraform-docs.io/), and [pre-commit](https://pre-commit.com/) for some out-of-the-box best practice good-ness
 
-## What will this Boiler plate do?
+## What will this Boilerplate do?
 
 1. Automatically setup a GCS Bucket to store tf state
 
