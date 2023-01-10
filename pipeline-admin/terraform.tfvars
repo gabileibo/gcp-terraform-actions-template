@@ -1,4 +1,4 @@
-project_id      = "hello-from-gcp-374310"
-region          = "us-central1"
-tf_state_bucket = "hello-from-gcp-tf-state"
-repo_name       = "hello-from-gcp"
+project_id      = "{%GCP_PROJECT_ID%}"
+region          = "{%GCP_DEFAULY_REGION}"
+tf_state_bucket = "{%GCS_STATE_BUCKET_NAME%}"
+repo_name       = "{%GH_REPO_NAME%}"
