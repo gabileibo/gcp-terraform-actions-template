@@ -35,7 +35,7 @@ resource "google_project_iam_member" "terraform_readwrite" {
 resource "google_service_account_iam_member" "workload_identity_user_readwrite" {
   service_account_id = google_service_account.terraform_readwrite.id
   role               = "roles/iam.workloadIdentityUser"
-  member             = "principalSet://iam.googleapis.com/${google_iam_workload_identity_pool.github_pool.name}/attribute.full/${github_repository.repo.name}refs/heads/main"
+  member             = "principalSet://iam.googleapis.com/${google_iam_workload_identity_pool.github_pool.name}/attribute.full/${github_repository.repo.full_name}refs/heads/main"
 }
 
 # readonly SA 
@@ -52,7 +52,7 @@ resource "google_project_iam_member" "terraform_readonly" {
 resource "google_service_account_iam_member" "workload_identity_user_readonly" {
   service_account_id = google_service_account.terraform_readonly.id
   role               = "roles/iam.workloadIdentityUser"
-  member             = "principalSet://iam.googleapis.com/${google_iam_workload_identity_pool.github_pool.name}/attribute.full/${github_repository.repo.name}"
+  member             = "principalSet://iam.googleapis.com/${google_iam_workload_identity_pool.github_pool.name}/attribute.repository/${github_repository.repo.full_name}"
 }
 
 # make sure the read only key can set locks
