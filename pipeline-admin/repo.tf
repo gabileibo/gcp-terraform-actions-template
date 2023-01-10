@@ -2,10 +2,11 @@ locals {
   workload_identity_provider = "${google_iam_workload_identity_pool.github_pool.name}/providers/${google_iam_workload_identity_pool_provider.github.workload_identity_pool_provider_id}"
 }
 
+# vulnerability_alerts is a bug, its enabled by default in public repos and if we set it github provider sometimes throws a 422 on apply
+# tfsec:ignore:github-repositories-enable_vulnerability_alerts tfsec:ignore:github-repositories-private
 resource "github_repository" "repo" {
-  name                 = var.repo_name
-  visibility           = "private"
-  vulnerability_alerts = true
+  name       = var.repo_name
+  visibility = "public"
 }
 
 resource "github_repository_environment" "terraform_apply_env" {

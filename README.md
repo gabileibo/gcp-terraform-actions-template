@@ -39,7 +39,7 @@ In practice I usually run the `pipeline-admin` folder locally to provision the m
 3. fill in the template variables in `terraform.tfvars` and `providers.tf` and run:
 
 ```
-cd pipeline
+cd pipeline-admin
 export GITHUB_TOKEN=$(gh auth token)
 # If you want to set this up for a GitHub org then run `export GITHUB_OWNER=<my-org-id>`
 terraform init

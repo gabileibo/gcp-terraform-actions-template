@@ -2,7 +2,7 @@
 echo "PROJECT_ID" $PROJECT_ID
 echo "BUCKET_LOCATION" $BUCKET_LOCATION
 echo "BUCKET_NAME" $BUCKET_NAME
-echo "ENCRYPTION_KEY_ID" $ENCRYPTION_KEY_ID
+# echo "ENCRYPTION_KEY_ID" $ENCRYPTION_KEY_ID
 
 echo
 read -p "Are you sure?(Y/n) " -n 1 -r
@@ -14,7 +14,7 @@ then
     echo "Setting GCP Project to ${PROJECT_ID}..." 
     gcloud config set project $PROJECT_ID
 
-    # # Create a bucket to hold state
+    # Create a bucket to hold state
     echo "Creating bucket ${BUCKET_NAME} in ${BUCKET_LOCATION}..."  
     gcloud storage buckets create $BUCKET_NAME --location=$BUCKET_LOCATION --uniform-bucket-level-access
 
